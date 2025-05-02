@@ -10,7 +10,7 @@ console.log(balance); //prints 'My balance is 72000 naira
 function add(a, b){
     return a + b
 }
-console.log(add(2,3))
+console.log(add(2,3)) //prints 5
 
 
 //3. A function to check for even or odd numbers
@@ -22,7 +22,7 @@ function isEven(n){
         return false
     }
 }
-console.log(isEven(2))
+console.log(isEven(2))  //prints true
 
 
 
@@ -42,14 +42,14 @@ function maxOfThree(a,b,c){
         return c
     }
 }
-console.log(maxOfThree(4,7,5));
+console.log(maxOfThree(4,7,5));  //prints 7
 
 
 //5. A function that reverses a string
 const reversedString = (str)=> {
     return str.split('').reverse().join('')
 }
-console.log(reversedString('baby'));
+console.log(reversedString('baby'));  //prints ybab
 
 
 // 6. A function that returns a factorial - A recursuve function
@@ -67,4 +67,4 @@ function factorial(n){
     return result
 }
 
-console.log(factorial(5))
+console.log(factorial(5)) //prints 120
