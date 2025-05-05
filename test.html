@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Applications</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        form{
+            display: block;
+        }
+        input,textarea{
+            display: block;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <input type="text" name="name" id="name" placeholder="full name">
+            <input type="email" name="email" id="email" placeholder="email">
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="message"></textarea>
+
+
+            <button type="submit" id="submit">Enter</button>
+        </form>
+        <button id="btn">click</button>
+    </div>
+
+
+    <script>
+        // validation of user email when user submits a sign up or contact form
+        const emailList = []
+
+        document.getElementById('submit').addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            //grabbing each input value from the form
+            let emailValue = document.getElementById('email').value
+            let nameValue = document.getElementById('name').value;
+            let msgValue = document.getElementById('message').value
+
+            //  using set to store the email list and check if the email already exists in the list
+            let emailSet = new Set(emailList.map(email => email.toLowerCase()))
+            
+            if (emailSet.has(emailValue.toLowerCase())) {
+                alert('email already exists')
+            } else {
+                emailSet.add(emailValue.toLowerCase())
+                emailList.push(emailValue)
+                console.log(emailList)
+            }
+            console.log(capitalizeFirstLetter(nameValue));
+        }) 
+        
+        // Capitalizing the first letter of the name and making the rest of the letters lowercase
+        const capitalizeFirstLetter = (str) => {
+            return str.split(' ').map(word => {
+                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+            }).join(' ')
+            console.log(str)
+        }
+        
+    </script>
+</body>
+</html>
