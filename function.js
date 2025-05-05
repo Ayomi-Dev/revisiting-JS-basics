@@ -1,3 +1,5 @@
+// Different Javascript functions ranging from basic to slightly harder
+
 // //#1. Using function as variable value
 const amount = toNaira(45);
 function toNaira(amountInDollar){
@@ -113,3 +115,18 @@ function capitalizeFirstLetter(str) {
     return words.join(' ');
 }
 console.log(capitalizeFirstLetter("i love jesus")); //prints "I Love Jesus"
+
+
+// password strength and match function
+const matchPassword = (password) => {
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/; // At least 8 characters, one uppercase letter, one lowercase letter, and one number
+    // return regex.test(password);
+    const xter = password.match(regex)
+    if (xter) {
+        console.log('true')
+    } else {
+        console.log('false')
+    }
+}
+
+console.log(matchPassword("Password123!")); //prints true
